@@ -1,0 +1,367 @@
+{
+	"info": {
+		"_postman_id": "857c6495-0788-4cde-bb3c-20042474081a",
+		"name": "PYTHON-TASK3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4630709",
+		"_collection_link": "https://lively-crescent-129891.postman.co/workspace/New-Team-Workspace~cc25ea55-18eb-4215-be0a-b7a3f5a47017/collection/4630709-857c6495-0788-4cde-bb3c-20042474081a?action=share&source=collection_link&creator=4630709"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Crear usuario de prueba",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"Vinicius\"\n}\n/*\n{\n  \"username\": \"Pepito\"\n}\n*/\n/*\n{\n  \"username\": \"Gustavito\"\n}\n*/\n/*\n{\n  \"username\": \"Gonzalito\"\n}\n*/"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users-api/users/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users-api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/users-api/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users-api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar nombre de usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"Míchel\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users-api/users/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users-api",
+								"users",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/users-api/users/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users-api",
+								"users",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Spotify",
+			"item": [
+				{
+					"name": "Ver token almacenado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/spotify/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"spotify",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar artista",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/spotify/artists/?q=metallica",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"spotify",
+								"artists",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "metallica"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar canción",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/spotify/songs/?q=virtual-insanity",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"spotify",
+								"songs",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "virtual-insanity"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Relaciones Usuario / Spotify",
+			"item": [
+				{
+					"name": "Añadir artista a usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"artist_name\": \"Pepe Benavente\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users-api/users/1/add-artist/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users-api",
+								"users",
+								"1",
+								"add-artist",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar artista de usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/users-api/users/1/remove-artist/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users-api",
+								"users",
+								"1",
+								"remove-artist",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Añadir canción a usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"artist_name\": \"Pepe Benavente\",\n  \"song_name\": \"El gallo sube\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users-api/users/1/add-song/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users-api",
+								"users",
+								"1",
+								"add-song",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar canción de usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/users-api/users/1/remove-song/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users-api",
+								"users",
+								"1",
+								"remove-song",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/api"
+		},
+		{
+			"key": "user_id",
+			"value": "1"
+		},
+		{
+			"key": "artist_id",
+			"value": "1"
+		},
+		{
+			"key": "track_id",
+			"value": "1"
+		}
+	]
+}
